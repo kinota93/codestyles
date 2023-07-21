@@ -13,7 +13,7 @@
 <body>
 <div class="container">
 
-<pre><code class="language-css">
+<pre><code class="language-css">/** css */
 @font-face {
   font-family: Chunkfive; src: url('Chunkfive.otf');
 }
@@ -33,40 +33,42 @@ body, .usertext {
 </code></pre>
 
 
-<pre><code class="language-java ">
+<pre><code class="language-java">// Java
 class Hello{
   public static void main(String[] argv)
   {
-      System.out.println("Hello");
-      int a = 20;
-      if (a < 12){
-            System.out.println("Too small");
-      }else{
-            System.out.println("Too large");
-      }
+    System.out.println("Hello");
+    int a = 20;
+    if (a < 12){
+      System.out.println("Too small");
+    }else{
+      System.out.println("Too large");
+    }
   }    
 }
 </code></pre>
 
 
-<pre><code class="language-php">
-function checkdate(string $date, int $days): string
-{
-  if (preg_match('/^[0-9]+-[0-9]+$/', $date)){
+<pre><code class="language-php"> // PHP
+class KsuCal{
+  const DATE_FORMAT = 'Y-m-d';
+  public function checkdate(string $date, int $days): string
+  {
+    if (preg_match('/^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$/', $date)){
       list ($year, $month, $day) = explode('-', $date);
-  }elseif (preg_match('/^[0-9]{8,}$/', $date)){
+    }elseif (preg_match('/^[0-9]{8}$/', $date)){
       $year = substr($date, 0, 4);
-      $month = substr($date, 4,2);
-      $day = substr($date, 6,2);
-  }
-  if (!isset($month, $day)) {
+      $month = substr($date, 4, 2);
+      $day = substr($date, 6, 2);
+    }
+    if (!isset($year, $month, $day)) {
       throw new Exception('Invalid date format!');
+    }
+    $time = mktime(0, 0, 0, (int)$month, (int)$day + $days, $year);
+    return date(self::DATE_FORMAT, $time);
   }
-  $time = mktime(0, 0, 0, (int)$month, (int)$day + $days, $year);
-  return date(self::DATE_FORMAT, $time);
-}    
+}
 </code></pre>
-
 </div>
 </body>
 </html>
