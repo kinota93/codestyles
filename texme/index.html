@@ -26,6 +26,24 @@ Numbered List
 print('unusual string')
 ```
 
+Lwt $w_n$ be the weekday of the $n$'th day of a month, and $d_{i,j}$ be $i$'th weekday $j$, then
+\[
+ w_n = (w_1 + n -1) \% 7 
+\]
+
+\[
+d_{i,j} = 7w + j - w_1  + 1
+\]  
+Here 
+\[
+w = \left\{ 
+  \begin{array}{ cl }
+    i - 1 & \quad \textrm{if } j < w_1 \\
+    i                 & \quad \textrm{otherwise}
+  \end{array}
+\right.
+\]
+
 \[
 y = \cos x + \sin x
 \]
