@@ -13,6 +13,6 @@ Numbered List
 1. item 3
 
 ```
-print('unusual string')
+print('unusual <string')
 ```
 </textarea>

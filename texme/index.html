@@ -16,7 +16,6 @@ Bulleted List:
 - item 2
 - item 3
 
-
 Numbered List
 1. item 1
 1. item 2
@@ -26,27 +25,30 @@ Numbered List
 print('unusual string')
 ```
 
-Lwt $w_n$ be the weekday of the $n$'th day of a month, and $d_{i,j}$ be $i$'th weekday $j$, then
-\[
+Let $w_n$ be the weekday of the $n$'th day, $d_{m,w}$ be $m$'th weekday $w$, and $D_{m,w}$ be the weekday $w$ in the $m$'th week,  in a month, then
+\begin{equation}
  w_n = (w_1 + n -1) \% 7 
-\]
+\end{equation}
 
+\begin{equation}
+d_{m,w} = 7\alpha + w - w_1  + 1
+\end{equation}  
+
+\begin{equation}
+D_{m,w} = 7m + w - w_1  - 6
+\end{equation}  
+
+where 
 \[
-d_{i,j} = 7w + j - w_1  + 1
-\]  
-Here 
-\[
-w = \left\{ 
+\alpha = \left\{ 
   \begin{array}{ cl }
-    i - 1 & \quad \textrm{if } j < w_1 \\
-    i                 & \quad \textrm{otherwise}
+    m - 1 & \quad \textrm{if } w \ge w_1 \\
+    m                 & \quad \textrm{otherwise}
   \end{array}
 \right.
 \]
 
-\[
-y = \cos x + \sin x
-\]
+
 </textarea>
 </body>
 </html>
