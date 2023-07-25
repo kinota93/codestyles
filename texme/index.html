@@ -25,17 +25,17 @@ Numbered List
 print('unusual string')
 ```
 
-Let $w_n$ be the weekday of the $n$'th day, $d_{m,w}$ be $m$'th weekday $w$, and $D_{m,w}$ be the weekday $w$ in the $m$'th week,  in a month, then
+Let $w_n$ be the weekday of the $n$'th day, $D_{m,w}$ be the weekday $w$ in the $m$'th week, and $d_{m,w}$ be $m$'th weekday $w$, in a month, then
 \begin{equation}
  w_n = (w_1 + n -1) \% 7 
 \end{equation}
 
 \begin{equation}
-d_{m,w} = 7\alpha + w - w_1  + 1
+D_{m,w} = 7m + w - w_1  - 6
 \end{equation}  
 
 \begin{equation}
-D_{m,w} = 7m + w - w_1  - 6
+d_{m,w} = 7\alpha + w - w_1  + 1
 \end{equation}  
 
 where 
